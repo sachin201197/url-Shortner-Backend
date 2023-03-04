@@ -6,9 +6,7 @@ app.use(express.json());
 connectMongo();
 
 app.use("/urlcreator", url);
-app.get("/", (req, res) => {
-  res.send("Hello World1236");
-});
+
 app.listen(8080, () => {
   console.log("Running on 8080");
 });
