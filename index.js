@@ -1,14 +1,11 @@
 const express = require("express");
 const connectMongo = require("./dbConfig/db");
 const url = require("./Routes/url.route");
+const cors = require("cors");
 const app = express();
+app.use(cors());
 app.use(express.json());
 connectMongo();
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
 
 app.use("/urlcreator", url);
 
